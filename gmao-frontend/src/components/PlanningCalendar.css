@@ -1,0 +1,38 @@
+.calendar-wrapper {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  color: var(--text-primary);
+}
+
+.calendar-loading {
+  color: var(--text-primary);
+  font-weight: 500;
+  text-align: center;
+  padding: 40px;
+}
+
+/* Personnalisation de FullCalendar pour correspondre au mode sombre global */
+.fc {
+  --fc-border-color: var(--border);
+  --fc-page-bg-color: transparent;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.fc .fc-button-primary {
+  background-color: var(--bg-base);
+  border-color: var(--border);
+  color: var(--text-primary);
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):hover {
+  background-color: var(--accent);
+  color: white;
+}

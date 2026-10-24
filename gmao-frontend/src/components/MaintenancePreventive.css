@@ -1,0 +1,203 @@
+.maintenance-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Barre d'outils ─────────────────────────────────────────────────── */
+.maintenance-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 420px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.sort-select {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+/* ── Résumé / chips ─────────────────────────────────────────────────── */
+.maintenance-summary {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.summary-chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.chip-retard { background: color-mix(in srgb, var(--color-danger) 12%, transparent); color: var(--color-danger); border-color: color-mix(in srgb, var(--color-danger) 30%, transparent); }
+.chip-bientot { background: color-mix(in srgb, var(--color-warning) 12%, transparent); color: var(--color-warning); border-color: color-mix(in srgb, var(--color-warning) 30%, transparent); }
+.chip-ok { background: color-mix(in srgb, var(--color-success) 12%, transparent); color: var(--color-success); border-color: color-mix(in srgb, var(--color-success) 30%, transparent); }
+.chip-inconnue { background: color-mix(in srgb, var(--color-neutral) 12%, transparent); color: var(--color-neutral); border-color: color-mix(in srgb, var(--color-neutral) 30%, transparent); }
+
+.estimation-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── Grille de cartes ───────────────────────────────────────────────── */
+.preventive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.maintenance-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.maintenance-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Bordure gauche colorée selon l'urgence, pour un repérage instantané */
+.urgence-border-urgence-retard { border-left-color: var(--color-danger); }
+.urgence-border-urgence-bientot { border-left-color: var(--color-warning); }
+.urgence-border-urgence-ok { border-left-color: var(--color-success); }
+.urgence-border-urgence-inconnue { border-left-color: var(--color-neutral); }
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.period-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.period-badge.urgence-retard { background: color-mix(in srgb, var(--color-danger) 15%, transparent); color: var(--color-danger); }
+.period-badge.urgence-bientot { background: color-mix(in srgb, var(--color-warning) 15%, transparent); color: var(--color-warning); }
+.period-badge.urgence-ok { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: var(--color-success); }
+.period-badge.urgence-inconnue { background: color-mix(in srgb, var(--color-neutral) 15%, transparent); color: var(--color-neutral); }
+
+.card-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-echeance {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.echeance-label {
+  color: var(--text-secondary);
+}
+
+.echeance-date {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.echeance-relatif {
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.echeance-relatif.urgence-retard { color: var(--color-danger); background: color-mix(in srgb, var(--color-danger) 10%, transparent); }
+.echeance-relatif.urgence-bientot { color: var(--color-warning); background: color-mix(in srgb, var(--color-warning) 10%, transparent); }
+
+.btn-schedule {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.btn-disabled {
+  background: color-mix(in srgb, var(--color-success) 10%, transparent);
+  color: var(--color-success);
+  border: 1px solid color-mix(in srgb, var(--color-success) 25%, transparent);
+  cursor: default;
+}
+
+/* ── État vide ───────────────────────────────────────────────────────── */
+.empty-state {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ── Skeleton loading ────────────────────────────────────────────────── */
+.maintenance-card-skeleton {
+  height: 180px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.02) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

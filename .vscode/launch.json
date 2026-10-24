@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GmaoApplication<gmao>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.gmao.gmao.GmaoApplication",
+            "projectName": "gmao",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

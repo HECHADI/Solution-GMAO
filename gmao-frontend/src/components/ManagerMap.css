@@ -1,0 +1,147 @@
+.map-frame {
+  height: 500px;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.map-root {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background: var(--bg-base); /* évite un flash de la mauvaise couleur pendant le chargement des tuiles */
+}
+
+/* ── Dark mode réel des tuiles OpenStreetMap (inversion + teinte) ────── */
+.map-tiles {
+  filter: invert(1) hue-rotate(180deg) brightness(0.95) contrast(0.9) saturate(0.7);
+}
+
+/* ── Marqueurs techniciens (divIcon coloré dynamiquement) ─────────────── */
+.tech-marker-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.tech-marker-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Popups thémées sombre (surcharge des classes globales Leaflet) ──── */
+.leaflet-popup-content-wrapper {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.leaflet-popup-tip {
+  background: var(--bg-surface);
+}
+
+.popup-content {
+  padding: 2px;
+}
+
+.popup-content-center {
+  text-align: center;
+}
+
+.popup-sub {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.popup-cible {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+
+/* ── Bouton recentrer ──────────────────────────────────────────────── */
+.map-btn-recentrer {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 1000;
+  background: color-mix(in srgb, var(--bg-elevated) 90%, transparent);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.map-btn-recentrer:hover {
+  background: var(--bg-elevated);
+}
+
+/* ── Légende flottante ─────────────────────────────────────────────── */
+.map-legend {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: color-mix(in srgb, var(--bg-elevated) 90%, transparent);
+  backdrop-filter: blur(8px);
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  max-width: 200px;
+}
+
+.legend-title {
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.legend-row:last-child {
+  margin-bottom: 0;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-row-site {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.legend-row-site img {
+  width: 14px;
+}

@@ -1,0 +1,195 @@
+.user-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.user-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 320px;
+  padding: 9px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.filtre-select {
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.user-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.gmao-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.gmao-table th {
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--border);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.gmao-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+
+.gmao-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.row-inactive {
+  opacity: 0.55;
+}
+
+.cell-muted {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+}
+
+.col-actions {
+  width: 100px;
+  text-align: right;
+}
+
+/* ── Badges rôle ────────────────────────────────────────────────────── */
+.badge-role {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.badge-role-manager { background: color-mix(in srgb, #8b5cf6 15%, transparent); color: #8b5cf6; }
+.badge-role-technicien { background: color-mix(in srgb, var(--color-info) 15%, transparent); color: var(--color-info); }
+
+/* ── Badge statut actif (cliquable) ────────────────────────────────── */
+.badge-actif {
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: opacity 0.15s ease;
+}
+
+.badge-actif:hover {
+  opacity: 0.8;
+}
+
+.badge-actif-oui { background: color-mix(in srgb, var(--color-success) 15%, transparent); color: var(--color-success); }
+.badge-actif-non { background: color-mix(in srgb, var(--color-danger) 15%, transparent); color: var(--color-danger); }
+
+/* ── Actions ────────────────────────────────────────────────────────── */
+.btn {
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-cancel {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s ease;
+}
+
+.btn-icon:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.empty-state {
+  padding: 40px 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+.skeleton-card {
+  height: 200px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.02) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Formulaires (dans les modales) ───────────────────────────────── */
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.required {
+  color: var(--color-danger);
+}
+
+.form-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}

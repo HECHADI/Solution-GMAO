@@ -1,0 +1,27 @@
+name: gmao_mobile
+description: "Application mobile GMAO pour techniciens."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # 🟢 Packages nécessaires pour notre application
+  http: ^1.2.0
+  flutter_secure_storage: ^9.0.0
+  image_picker: ^1.0.7
+  signature: ^5.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

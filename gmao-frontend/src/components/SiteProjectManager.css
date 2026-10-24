@@ -1,0 +1,207 @@
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Toolbar ────────────────────────────────────────────────────────── */
+.project-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  max-width: 380px;
+  padding: 9px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.filtre-select {
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+/* ── Grille de cartes ───────────────────────────────────────────────── */
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.project-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ── Badge statut chantier ─────────────────────────────────────────── */
+.badge-chantier {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge-chantier-planifie { background: color-mix(in srgb, var(--color-neutral) 15%, transparent); color: var(--color-neutral); }
+.badge-chantier-en-cours { background: color-mix(in srgb, var(--color-en-cours) 15%, transparent); color: var(--color-en-cours); }
+.badge-chantier-termine  { background: color-mix(in srgb, var(--color-realise) 15%, transparent); color: var(--color-realise); }
+.badge-chantier-annule   { background: color-mix(in srgb, var(--color-curatif) 15%, transparent); color: var(--color-curatif); }
+
+/* ── Meta infos ─────────────────────────────────────────────────────── */
+.project-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.project-meta strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── Barre de progression ─────────────────────────────────────────── */
+.project-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-track {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-elevated);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.progress-label {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  min-width: 36px;
+  text-align: right;
+}
+
+.progress-detail {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+}
+
+/* ── Liste des interventions ─────────────────────────────────────────── */
+.intervention-list-title {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 4px 0 8px;
+}
+
+.project-intervention-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.project-intervention-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.intervention-title {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.intervention-tech {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.cell-muted {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+/* ── Badges de statut d'intervention (mêmes classes que InterventionsList) ── */
+.badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.badge-a-faire  { background: color-mix(in srgb, var(--color-a-faire) 15%, transparent); color: var(--color-a-faire); }
+.badge-en-cours { background: color-mix(in srgb, var(--color-en-cours) 15%, transparent); color: var(--color-en-cours); }
+.badge-realise  { background: color-mix(in srgb, var(--color-realise) 15%, transparent); color: var(--color-realise); }
+
+/* ── État vide ──────────────────────────────────────────────────────── */
+.empty-state {
+  padding: 40px 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+}
+
+/* ── Skeleton ───────────────────────────────────────────────────────── */
+.skeleton-card {
+  height: 220px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.02) 25%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.02) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
